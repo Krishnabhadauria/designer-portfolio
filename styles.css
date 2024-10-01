@@ -1,0 +1,792 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Handjet", sans-serif;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
+  padding-top: 60px; /* Add space for the fixed navbar */
+}
+
+/* Navbar */
+.navbar {
+  position: fixed; /* Fix the navbar to the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  z-index: 1000; /* Ensure the navbar is above other content */
+}
+
+.logo img {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.nav-links {
+  margin: 0 auto;
+  list-style-type: none;
+  display: inline-flex;
+  padding: 4px;
+  align-items: center;
+  gap: 5px;
+  border-radius: 16px;
+  border: 2px solid rgba(147, 147, 147, 0.5);
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(25px);
+}
+
+.nav-links li {
+  font-family: "Handjet", sans-serif;
+  font-size: 20px;
+}
+
+.nav-links li a {
+  color: #2cb67db2;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.nav-links li a:hover {
+  background-color: #2cb67db2;
+  color: #000;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 30px;
+  color: #2cb67db2;
+  cursor: pointer;
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Initially hide the nav links on mobile */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Add a background color */
+    padding: 10px;
+    border-radius: 0;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    display: flex; /* Show the menu when active class is added */
+  }
+
+  .nav-links li {
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+  }
+
+  .nav-links li a {
+    padding: 15px;
+    width: 100%;
+  }
+
+  /* Show the menu icon in mobile view */
+  .menu-icon {
+    display: block;
+  }
+}
+/* Main Section */
+.main-section {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  height: calc(100vh - 60px);
+  background: black;
+}
+
+.content {
+  max-width: 50%;
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  font-family: "Resotho";
+  font-size: 70px;
+  background: radial-gradient(
+    54.99% 54.99% at 56.63% 50%,
+    #fff 0%,
+    #fff 33.9%,
+    rgba(148, 161, 178, 0.39) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.profile-img {
+  position: absolute;
+  top: 50%;
+  right: 1%;
+  height: auto;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.btn-primary {
+  display: inline-flex;
+  padding: 12px 24px;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  border: 1px solid #7f5af0;
+  background: #7f5af0;
+  color: #fff;
+  font-family: "Fira Code", monospace;
+  font-size: 18px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #4b0082;
+}
+
+/* Social Icons */
+.social-icons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  width: 40px; /* Adjust size */
+  height: 40px; /* Adjust the size of the icons */
+  color: #010101; /* Set the icon color */
+  transition: transform 0.3s ease, color 0.3s ease;
+  background-color: #2cb67d;
+  border-radius: 50%;
+}
+
+.social-icons a:hover {
+  transform: scale(1.1);
+  color: #ffffff;
+}
+
+/* Info Section */
+.info-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  padding: 25px;
+  margin: 30px auto;
+  border-radius: 28px;
+  border: 2px solid rgba(147, 147, 147, 0.4);
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(25px);
+}
+
+.info-box {
+  text-align: center;
+  font-family: "Handjet", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #2cb67d;
+}
+
+.info-box p {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.info-box span {
+  color: #fffffe;
+  font-family: "Handjet", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+/* RESPONSIVE STYLES */
+
+/* Medium screens (tablets) */
+@media (max-width: 1200px) {
+  .profile-img {
+    width: 300px; /* Adjust width for medium screens */
+    height: auto;
+  }
+
+  h1 {
+    font-size: 60px; /* Adjust heading size */
+  }
+
+  .subtitle {
+    font-size: 28px;
+  }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 768px) {
+  .profile-img {
+    display: none; /* Hide profile image */
+  }
+
+  .main-section {
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center align content */
+    align-items: center;
+    padding: 20px; /* Adjust padding */
+    text-align: center; /* Center text */
+  }
+
+  h1 {
+    font-size: 50px; /* Adjust heading size for mobile */
+  }
+
+  .subtitle {
+    font-size: 24px; /* Adjust subtitle for mobile */
+  }
+
+  .social-icons {
+    margin-top: 10px; /* Adjust margin */
+  }
+}
+
+/* Extra small screens (mobile) */
+@media (max-width: 576px) {
+  h1 {
+    font-size: 40px; /* Further adjust heading size */
+  }
+
+  .subtitle {
+    font-size: 22px; /* Adjust subtitle size */
+  }
+
+  .info-section {
+    flex-direction: column; /* Stack info boxes vertically */
+    gap: 20px; /* Add spacing between info boxes */
+    width: 90%; /* Adjust width for mobile */
+    padding: 20px;
+  }
+
+  .info-box {
+    font-size: 24px; /* Adjust font size for mobile */
+  }
+
+  .info-box p {
+    font-size: 1.5rem;
+  }
+
+  .info-box span {
+    font-size: 24px;
+  }
+}
+
+/* About Section */
+.about {
+  padding-top: 100px;
+  background-image: url("./aboutbg.png");
+  background-size: cover; /* Ensure the background covers the entire section */
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff; /* Set text color to white for consistency */
+  z-index: 100000000;
+}
+
+.about-h1 {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.2;
+  margin-bottom: 50px; /* Add space between heading and content */
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px; /* Space between image and text */
+  margin-bottom: 30px; /* Add space between elements */
+}
+
+/* Image Box */
+.image-box {
+  padding-left: 20px;
+  width: 30%;
+  height: auto;
+  position: relative;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* About Text */
+.about-text {
+  width: 60%;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+  color: #2cb67d;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.about-me {
+  padding-top: 50px;
+  padding: 30px;
+}
+
+/* Location and CV Button */
+.lower-content {
+  justify-content: center;
+}
+
+.location-box {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 10px; /* Space between icon and text */
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 1.2rem;
+  color: #2cb67d;
+  margin-right: 20px; /* Space between location and button */
+}
+
+.location-emoji {
+  font-size: 1.5rem;
+}
+
+.cv-button {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #7f5af0;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 10px; /* Rounded button */
+  border: 2px solid #7f5af0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cv-button:hover {
+  background-color: #4b0082;
+  color: #fff; /* Ensure font stays white on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column; /* Stack elements vertically */
+    text-align: center;
+  }
+
+  .image-box,
+  .about-text {
+    width: 100%;
+  }
+
+  .cv-button,
+  .location-box {
+    margin: 20px auto; /* Center elements */
+    width: fit-content; /* Adapt width to content */
+  }
+
+  .cv-button {
+    width: 100%; /* Full width button for smaller devices */
+  }
+}
+
+.services {
+  padding: 50px;
+  text-align: center;
+  background-image: url("./servicesbg.jpg");
+  background-size: contain;
+  background-position: center; /* Center the background image */
+  background-repeat: repeat-x;
+}
+
+.heading h1 {
+  font-size: 3rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.2;
+}
+
+.heading h1 span {
+  color: #2cb67d;
+}
+
+.services-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  padding-top: 15%;
+  width: 250px;
+  text-align: left;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card h2 {
+  color: #2cb67d;
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Overall Section Styling */
+.projects-section h1 {
+  font-size: 3rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.2;
+  padding-bottom: 50px;
+  text-align: center; /* Centered heading */
+}
+
+.projects-section {
+  padding: 50px;
+  background-color: #000000;
+  z-index: 999999999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Project Grid Styling for Larger Screens */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  grid-template-rows: auto;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px; /* Better width management for larger screens */
+  position: relative;
+}
+
+/* Project Card Styling */
+.project-card {
+  position: relative;
+  background-color: #e9fadf;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  border-radius: 0 0 20px 20px;
+}
+
+.project-card h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+/* Hover Effect for Project Cards */
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Circle in the Middle (Hidden on Mobile) */
+.project-circle {
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid #135137;
+  background-color: #2cb67d;
+  z-index: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Specific positioning for desktop layout */
+.project1 {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+
+.project2 {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.project3 {
+  grid-column: 1;
+  grid-row: 2 / span 2;
+}
+
+.project4 {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.project5 {
+  grid-column: 2 / span 2;
+  grid-row: 3;
+}
+
+.project-circle {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+/* Mobile Responsiveness - Breakpoint for screens under 768px */
+@media (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr; /* Single column layout */
+    grid-template-rows: auto; /* Auto height rows */
+    gap: 20px;
+    width: 100%; /* Full width on mobile */
+  }
+
+  .project-card {
+    grid-column: 1; /* Each card takes full width */
+    width: 100%;
+    height: auto; /* Auto height for better stacking */
+  }
+
+  /* Hide the circle in mobile view */
+  .project-circle {
+    display: none; /* Circle is hidden on mobile */
+  }
+}
+
+/* Extra Small Screens (under 480px) */
+@media (max-width: 480px) {
+  .projects-section h1 {
+    font-size: 2rem; /* Smaller heading */
+    padding-bottom: 30px;
+  }
+
+  .project-grid {
+    gap: 10px;
+  }
+
+  .project-card {
+    border-radius: 15px; /* Smaller radius for compact screens */
+  }
+
+  .project-overlay {
+    padding: 8px; /* Less padding */
+    font-size: 16px;
+  }
+}
+
+
+/* Contact Section */
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+  background-color: #000; /* Black background */
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1); /* Slight white transparency */
+  padding: 40px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 1200px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Left Side Styling */
+.contact-left {
+  flex: 1;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: "Resotho", sans-serif;
+  padding-right: 20px;
+}
+
+.contact-left h2 {
+  font-size: 3rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.2;
+  padding-bottom: 50px;
+}
+
+.contact-left p {
+  font-size: 16px;
+  font-family: "Handjet", sans-serif;
+  line-height: 1.5;
+}
+
+.contact-left a {
+  color: #7f5af0;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-left a:hover {
+  text-decoration: underline;
+}
+
+/* Right Side Styling */
+.contact-right {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.icon-group {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+}
+
+.icon img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #2cb67d; /* Green circular background */
+  padding: 10px;
+}
+
+.icon img:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+
+/* CTA Button */
+.cta-container {
+  position: relative;
+  width: 100%;
+}
+
+.circle-icon {
+  width: 100px;
+  height: 100px;
+  background-color: #7f5af0;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle-icon img {
+  width: 40px;
+  height: 40px;
+}
+
+.cta-container p {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #2cb67d;
+  font-family: "Handjet", sans-serif;
+}
+
+/* For Smaller Screens */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .contact-left,
+  .contact-right {
+    padding: 0;
+  }
+
+  .icon-group {
+    justify-content: space-evenly;
+  }
+}
